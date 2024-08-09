@@ -1,596 +1,598 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="theme-color" content="#ffffff"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="author" content="Riccardo Vecchi">
-    <meta name="description" content="Professional portfolio of Riccardo Vecchi, a Cloud Architect working in technical presales. Explore personal and academic projects, expertise in cloud technology, and innovative IT solutions.">
-    <meta name="keywords" content="Riccardo Vecchi, cloud architect, cloud, architect, GCP, Google Cloud Platform, AWS, Amazon Web Services, Azure, Microsoft, OpenAI, AI, artificial intelligence, deep learning, neural networks, software development, software engineer, computer science, IT, ICT, cybersecurity, cloud solutions, software development, programming, coding, Android, C, Java, Python">
-    <title>Riccardo Vecchi</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="assets/css/fa.all.min.css">
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --background-color: #ecf0f1;
-            --line-height-base: 1.6;
-            --font-size: 16px;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: var(--font-size);
-            line-height: var(--line-height-base);
-            color: #333;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 1.2em;
-            background-color: var(--background-color);
-        }
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1em 1em;
-            text-align: center;
-            border-radius: 0.6em;
-            margin-bottom: 1.5em;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-        }
-        h1, h2 {
-            display: flex;
-            align-items: center;
-            gap: 0.5em;
-            color: var(--primary-color);
-        }
-        .header-content {
-            text-align: left;
-        }
-        .profile-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 0.3em solid white;
-        }
-        section {
-            background-color: white;
-            padding: 1.2em;
-            margin-bottom: 1.6em;
-            border-radius: 0.6em;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            overflow: hidden;
-            cursor: pointer;
-        }
-        .section-header {
-            background-color: white;
-            padding: 0.6em 0.9em;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .section-header h2 {
-            margin: 0;
-            font-size: 1.2em;
-            width: 100%;
-        }
-        .section-content {
-            padding: 0 0.9em;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        .section.active .section-content {
-            max-height: fit-content;
-            transition: max-height 0.5s ease-in;
-        }
-        .expand-icon {
-            transition: transform 0.3s ease;
-        }
-        .section.active .expand-icon {
-            transform: rotate(180deg);
-        }
-        .project, .publication {
-            background-color: #f8f9fa;
-            margin: 1.3em 0;
-            padding: 1.3em;
-            border-radius: 0.3em;
-            border-left: 5px solid var(--secondary-color);
-        }
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6em;
-        }
-        .skill {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 0.3em 0.6em;
-            border-radius: 1.3em;
-            font-size: 0.9em;
-            transition: opacity 0.3s;
-        }
-        .skill:hover {
-            opacity: 1;
-        }
-        #languageToggle {
-            position: fixed;
-            top: 1.3em;
-            right: 1.3em;
-            padding: 0.6em 0.9em;
-            background-color: var(--secondary-color);
-            color: white;
-            border: none;
-            border-radius: 1.6em;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            font-weight: bold;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-        #languageToggle:hover {
-            background-color: #2980b9;
-        }
-        #invisible_gap {
-            visibility: hidden;
-        }
-        .social-icons {
-            margin-top: 1.3em;
-        }
-        .social-icons a {
-            color: white;
-            font-size: 1.5em;
-            margin: 0 0.6em;
-            transition: color 0.3s;
-        }
-        .social-icons a:hover {
-            color: var(--secondary-color);
-        }
-        @font-face {
-            font-family: 'FontAwesome';
-            src: url('assets/fonts/fa-brands-400.woff2') format('woff2'),
-                 url('assets/fonts/fa-brands-400.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-        .fab {
-            font-family: 'FontAwesome';
-        }
-        .date {
-            font-style: italic;
-            color: #666;
-        }
-        .url {
-            color: var(--secondary-color);
-            text-decoration: none;
-        }
-        .url:hover {
-            text-decoration: underline;
-        }
-        .copyright-container {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: white;
-            text-align: center;
-            padding: 0.6em 0;
-        }
-        @media (max-width: 600px) {
+    <head>
+        <meta charset="UTF-8">
+        <meta name="theme-color" content="#ffffff"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="author" content="Riccardo Vecchi">
+        <meta name="description" content="Professional portfolio of Riccardo Vecchi, a Cloud Architect working in technical presales. Explore personal and academic projects, expertise in cloud technology, and innovative IT solutions.">
+        <meta name="keywords" content="Riccardo Vecchi, cloud architect, cloud, architect, GCP, Google Cloud Platform, AWS, Amazon Web Services, Azure, Microsoft, OpenAI, AI, artificial intelligence, deep learning, neural networks, software development, software engineer, computer science, IT, ICT, cybersecurity, cloud solutions, software development, programming, coding, Android, C, Java, Python">
+        <title>Riccardo Vecchi</title>
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="assets/css/fa.all.min.css">
+        <style>
+            :root {
+                --primary-color: #2c3e50;
+                --secondary-color: #3498db;
+                --background-color: #ecf0f1;
+                --line-height-base: 1.6;
+                --font-size: 16px;
+            }
             body {
-                padding: 0.6em;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: var(--font-size);
+                line-height: var(--line-height-base);
+                color: #333;
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 1.2em;
+                background-color: var(--background-color);
             }
             header {
-                flex-direction: column;
+                background-color: var(--primary-color);
+                color: white;
+                padding: 1em 1em;
                 text-align: center;
+                border-radius: 0.6em;
+                margin-bottom: 1.5em;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+            }
+            h1, h2 {
+                display: flex;
+                align-items: center;
+                gap: 0.5em;
+                color: var(--primary-color);
+            }
+            .header-content {
+                text-align: left;
             }
             .profile-image {
-                width: 140px;
-                height: 140px;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 0.3em solid white;
             }
-            .section {
-                padding: 0.9em;
+            section {
+                background-color: white;
+                padding: 1.2em;
+                margin-bottom: 1.6em;
+                border-radius: 0.6em;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                overflow: hidden;
+                cursor: pointer;
+            }
+            .section-header {
+                background-color: white;
+                padding: 0.6em 0.9em;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
             }
             .section-header h2 {
-                font-size: 1em;
+                margin: 0;
+                font-size: 1.2em;
+                width: 100%;
+            }
+            .section-content {
+                padding: 0 0.9em;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+            }
+            .section.active .section-content {
+                max-height: fit-content;
+                transition: max-height 0.5s ease-in;
+            }
+            .expand-icon {
+                transition: transform 0.3s ease;
+            }
+            .section.active .expand-icon {
+                transform: rotate(180deg);
+            }
+            .project, .publication {
+                background-color: #f8f9fa;
+                margin: 1.3em 0;
+                padding: 1.3em;
+                border-radius: 0.3em;
+                border-left: 5px solid var(--secondary-color);
+            }
+            .skills {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.6em;
             }
             .skill {
-                font-size: 0.8em;
-                padding: 0.3em 0.5em;
+                display: inline-block;
+                background-color: var(--secondary-color);
+                color: white;
+                padding: 0.3em 0.6em;
+                border-radius: 1.3em;
+                font-size: 0.9em;
+                transition: opacity 0.3s;
+            }
+            .skill:hover {
+                opacity: 1;
             }
             #languageToggle {
-                padding: 0.5em 0.8em;
-                font-size: 0.9em;
+                position: fixed;
+                top: 1.3em;
+                right: 1.3em;
+                padding: 0.6em 0.9em;
+                background-color: var(--secondary-color);
+                color: white;
+                border: none;
+                border-radius: 1.6em;
+                cursor: pointer;
+                transition: background-color 0.3s;
+                font-weight: bold;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.2);
             }
-        }
-    </style>
-</head>
-<body>
-    <button id="languageToggle" onclick="toggleLanguage()">English</button>
-    <header>
-        <img src="assets/images/profile_photo_2.jpg" alt="Riccardo Vecchi" class="profile-image">
-        <div class="header-content">
-            <p class="lang-it">Riccardo Vecchi<br>Cloud Architect | IT Solution Architect</p>
-            <p class="lang-en">Riccardo Vecchi<br>Cloud Architect | IT Solution Architect</p>
-            <div class="location">
-                <span class="lang-it">
-                    <svg height="20" fill="#ffffff" aria-label="Location" class="octicon octicon-location" viewBox="0 0 16 16" version="1.1" width="20" role="img">
-                    <path fill-rule="evenodd" d="M11.536 3.464a5 5 0 010 7.072L8 14.07l-3.536-3.535a5 5 0 117.072-7.072v.001zm1.06 8.132a6.5 6.5 0 10-9.192 0l3.535 3.536a1.5 1.5 0 002.122 0l3.535-3.536zM8 9a2 2 0 100-4 2 2 0 000 4z"></path>
-                </svg> Roma, Italia</span>
-                <span class="lang-en">
-                    <svg height="20" fill="#ffffff" aria-label="Location" class="octicon octicon-location" viewBox="0 0 16 16" version="1.1" width="20" role="img">
-                    <path fill-rule="evenodd" d="M11.536 3.464a5 5 0 010 7.072L8 14.07l-3.536-3.535a5 5 0 117.072-7.072v.001zm1.06 8.132a6.5 6.5 0 10-9.192 0l3.535 3.536a1.5 1.5 0 002.122 0l3.535-3.536zM8 9a2 2 0 100-4 2 2 0 000 4z"></path>
-                </svg> Rome, Italy</span>
-            </div>
-            <div class="social-icons">
-                <a href="https://linkedin.com/in/vecchiriccardo/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Riccardo-Vecchi" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://x.com/RiccardoVecchi1" target="_blank"><i class="fab fa-twitter"></i></a>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <section id="about" class="section collapsible"> 
-            <div class="section-header"> 
-                <h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-                    <span class="lang-it">Chi Sono</span>
-                    <span class="lang-en">About Me</span>
-                    <span class="expand-icon">▼</span>
-                </h2>
-            </div>
-            <div class="section-content">
-                <p class="lang-it">Da sempre appassionato di informatica, automazione e il mondo dei computer in generale, sono un professionista orientato ai risultati con oltre 5 anni di esperienza nella consulenza e progettazione ICT. Problem solver efficace, con un approccio pratico e capacità di comunicazione ben sviluppate a tutti i livelli. Abituato a lavorare in ambienti multinazionali e multiculturali, attualmente sono focalizzato nell'approfondire tecnologie Cloud.</p>
-                <p class="lang-en">Always passionate about IT, Automation, and the computers' world in general, I am a results-oriented professional with over 5 years of experience in ICT consulting and design. I am an effective problem solver with a practical approach and well-developed communication skills at all levels. Used to working in multinational and multicultural environments, I am currently focused on deepening my knowledge of Cloud technologies.</p>
-            </div>
-        </section>
-
-        <section id="experience" class="section collapsible">
-            <div class="section-header">
-                <h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-                    <span class="lang-it">Esperienza Lavorativa</span>
-                    <span class="lang-en">Work Experience</span>
-                    <span class="expand-icon">▼</span>
-                </h2>
-            </div>
-            <div class="section-content">
-                <div class="project">
-                    <h3><img src="assets/images/tim_logo.png" alt="TIM Enterprise" width="75" height="20"> Cloud Architect / Technical Presales</h3>
-                    <p class="date">11/2022 - Present</p>
-                    <ul class="lang-it">
-                        <li><b>Progettazione e implementazione architetture e soluzioni Cloud</b> su piattaforme pubbliche (GCP, AWS, Azure) e private (TIM Cloud basato su VMware), assicurando l'efficienza e la scalabilità delle infrastrutture IT.</li>            
-                        <li><b>Quotazioni e stime economiche</b> per le soluzioni proposte, analizzando costi e benefici per garantire la migliore soluzione tecnologica ed economica per il cliente.</li>
-                        <li><b>Mercato di Riferimento Private italiano ed europeo</b>, in particolare aziende del segmento Top e Large.</li>
-                        <li><b>Sviluppo, innovazione e aggiornamento continuo</b> sulle ultime tecnologie e tendenze del cloud computing, contribuendo allo sviluppo di nuove soluzioni e all'innovazione dei servizi offerti. Sviluppo di soluzioni di Hybrid Cloud e Disaster Recovery.</li>
-                    </ul>
-                    <ul class="lang-en">
-                        <li><b>Cloud Architecture Design and cloud architecture implementation</b> on public platforms (GCP, AWS, Azure) and private ones (TIM Cloud based on VMware), ensuring efficiency and scalability of IT infrastructures.</li>
-                        <li><b>Quotations and Cost Estimates</b> for proposed solutions, analyzing costs and benefits to ensure the best technological and economic solution for the customer.</li>
-                        <li><b>Italian and European Private as Reference Market</b>, particularly companies in the Top and Large segment.</li>
-                        <li><b>Development and Innovation and continuously updated</b> on the latest technologies and trends in cloud computing, contributing to the development of new solutions and the innovation of the services offered. Designo of hybrid cloud and Disaster Recovery solutions.</li>
-                    </ul>
-                </div>
-                <div class="project">
-                    <h3><img src="assets/images/huawei_logo.png" alt="Huawei Technologies" width="40" height="40"> IT Solution Architect</h3>
-                    <p class="date">03/2022 - 11/2022</p>
-                    <ul class="lang-it">
-                        <li>Solution Architect nel dominio ICT Service per operatori di rete italiani.</li>
-                        <li>Interfaccia cliente per pre-vendita di servizi e presentazione di soluzioni E2E (fino a livello CXO).</li>
-                        <li>Responsabile dello sviluppo e personalizzazione di PoC (Proof of Concept) del portfolio Huawei.</li>
-                        <li>Proprietario dell'Arrangement di Supporto alle Offerte e della Proposta di Costo della Soluzione di Servizio.</li>
-                    </ul>
-                    <ul class="lang-en">
-                        <li>Solution Architect within ICT Service domain for Italian Network Carriers.</li>
-                        <li>Customer interface for Service Pre-Sale and E2E Solution presentation (up to CXO level).</li>
-                        <li>Responsible for PoC (Proof of Concept) development & customization of Huawei portfolio.</li>
-                        <li>Owner for the Bidding Support Arrangement and Service Solution Cost Proposal.</li>
-                    </ul>
-                </div>
-                <div class="project">
-                    <h3><img src="assets/images/huawei_logo.png" alt="Huawei Technologies" width="40" height="40"> Technical Director</h3>
-                    <p class="date">03/2021 - 11/2022</p>
-                    <ul class="lang-it">
-                        <li>Gestione e leadership di un piccolo team distribuito.</li>
-                        <li>Responsabile della Soddisfazione del Cliente del progetto.</li>
-                        <li>Responsabile per Problemi Tecnici, Escalation Tecniche, Ottimizzazione dei Costi e Operazioni di Sicurezza della Rete secondo il Processo Huawei.</li>
-                        <li>Completato con successo la migrazione di una piattaforma cloud legacy a una soluzione on-premise (11 server, oltre 50 VM, configurazione della rete, virtualizzazione, installazione software, integrazione di terze parti).</li>
-                    </ul>
-                    <ul class="lang-en">
-                        <li>Management and lead of a small and distributed team.</li>
-                        <li>Accountable for project Customer Satisfaction.</li>
-                        <li>Responsible for Technical Issues, Technical Escalations, Cost Optimization, and Network Security Operations according to the Huawei Process.</li>
-                        <li>Successfully migrated a cloud legacy platform to an on-premise solution (11 servers, 50+ VMs, network configuration, virtualization, software installation, 3rd party integration).</li>
-                    </ul>
-                </div>
-                <div class="project">
-                    <h3><img src="assets/images/huawei_logo.png" alt="Huawei Technologies" width="40" height="40"> Software Development Engineer</h3>
-                    <p class="date">09/2019 - 03/2021</p>
-                    <ul class="lang-it">
-                        <li>Interfaccia con il cliente per lo sviluppo di nuove funzionalità su Automazione/Trasformazione Digitale/Orchestrazione della Rete.</li>
-                        <li>Sviluppo back-end e front-end dei servizi di Trouble Ticket e Fault Management (FM) su una piattaforma ospitata su AWS, AUTIN (AUTomation INtelligence).</li>
-                        <li>Servizio di sysadmin e risoluzione problemi in chiamata per garantire il 100% di disponibilità della piattaforma.</li>
-                        <li>Integrazione di 10+ EMS (ad es. NOKIA, HUAWEI, CISCO, ZTE, ZABBIX, INFINERA) basata su protocolli CORBA e SNMP con FM basato su IBM Netcool.</li>
-                        <li>Sviluppo e personalizzazione di oltre 4 dashboard di monitoraggio KPI.</li>                        
-                    </ul>
-                    <ul class="lang-en">
-                        <li>Customer interface for new features development on Automation/Digital Transformation/Network Orchestration.</li>
-                        <li>Back-end and front-end development of Trouble Ticket and Fault Management (FM) services on an AWS hosted platform, AUTIN (AUTomation INtelligence).</li>
-                        <li>Sysadmin and on-call troubleshooting service to guarantee 100% platform availability.</li>
-                        <li>10+ EMS Integration (e.g. NOKIA, HUAWEI, CISCO, ZTE, ZABBIX, INFINERA) based on CORBA and SNMP protocols with IBM Netcool-based FM.</li>
-                        <li>Development and customization of 4+ KPI tracking dashboards.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="publications" class="section collapsible">
-            <div class="section-header">
-                <h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-                    <span class="lang-it">Pubblicazioni</span>
-                    <span class="lang-en">Publications</span>
-                    <span class="expand-icon">▼</span>
-                </h2>
-            </div>
-            <div class="section-content">
-                <div class="publication">
-                    <h3>Compressing deep quaternion neural networks with targeted regularization
-                        <a href="https://iris.uniroma1.it/retrieve/handle/11573/1503651/1708463/Vecchi_Compressing_2020.pdf" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48" style="fill:#228BE6;">
-                                <path d="M 41.470703 4.9863281 A 1.50015 1.50015 0 0 0 41.308594 5 L 27.5 5 A 1.50015 1.50015 0 1 0 27.5 8 L 37.878906 8 L 22.439453 23.439453 A 1.50015 1.50015 0 1 0 24.560547 25.560547 L 40 10.121094 L 40 20.5 A 1.50015 1.50015 0 1 0 43 20.5 L 43 6.6894531 A 1.50015 1.50015 0 0 0 41.470703 4.9863281 z M 12.5 8 C 8.3754991 8 5 11.375499 5 15.5 L 5 35.5 C 5 39.624501 8.3754991 43 12.5 43 L 32.5 43 C 36.624501 43 40 39.624501 40 35.5 L 40 25.5 A 1.50015 1.50015 0 1 0 37 25.5 L 37 35.5 C 37 38.003499 35.003499 40 32.5 40 L 12.5 40 C 9.9965009 40 8 38.003499 8 35.5 L 8 15.5 C 8 12.996501 9.9965009 11 12.5 11 L 22.5 11 A 1.50015 1.50015 0 1 0 22.5 8 L 12.5 8 z"></path>
-                            </svg>
-                        </a>
-                    </h3>                   
-                    <p class="date">08/07/2020, CAAI Transactions on Intelligence Technology</p>
-                    <p class="lang-it">Abstract: Le reti neurali ipercomplesse trovano applicazioni in molteplici campi, dalla ricostruzione di immagini all'elaborazione audio 3D. Progettando nuove tecniche di regolarizzazione, gli autori mostrano come minimizzare il numero di connessioni e neuroni superando gli approcci classici, risultando in modelli più piccoli e veloci, adatti per applicazioni a basso consumo energetico e in tempo reale.</p>
-                    <p class="lang-en">Abstract: Hyper-complex NNs find applications in multiple fields, from image reconstruction to 3D audio processing. By designing new regularization techniques, the authors show how to minimize the number of connections and neurons outperforming classical approaches, resulting in smaller and faster models, suitable for low-power and real-time applications.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="section collapsible">
-            <div class="section-header">
-                <h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-                    <span class="lang-it">Progetti</span>
-                    <span class="lang-en">Projects</span>
-                    <span class="expand-icon">▼</span>
-                </h2>
-            </div>
-            <div class="section-content">
-                <div class="project">
-                    <h3>Telegram Bot - HarmonyAI
-                        <a href="https://t.me/Harmony_AIbot" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48" style="fill:#228BE6;">
-                                <path d="M 41.470703 4.9863281 A 1.50015 1.50015 0 0 0 41.308594 5 L 27.5 5 A 1.50015 1.50015 0 1 0 27.5 8 L 37.878906 8 L 22.439453 23.439453 A 1.50015 1.50015 0 1 0 24.560547 25.560547 L 40 10.121094 L 40 20.5 A 1.50015 1.50015 0 1 0 43 20.5 L 43 6.6894531 A 1.50015 1.50015 0 0 0 41.470703 4.9863281 z M 12.5 8 C 8.3754991 8 5 11.375499 5 15.5 L 5 35.5 C 5 39.624501 8.3754991 43 12.5 43 L 32.5 43 C 36.624501 43 40 39.624501 40 35.5 L 40 25.5 A 1.50015 1.50015 0 1 0 37 25.5 L 37 35.5 C 37 38.003499 35.003499 40 32.5 40 L 12.5 40 C 9.9965009 40 8 38.003499 8 35.5 L 8 15.5 C 8 12.996501 9.9965009 11 12.5 11 L 22.5 11 A 1.50015 1.50015 0 1 0 22.5 8 L 12.5 8 z"></path>
-                            </svg>
-                        </a>
-                    </h3>
-                    <p class="date">2024</p>
-                    <p class="lang-it">Un assistente AI Bot di Telegram che offre supporto terapeutico su richiesta. Con intelligenza emotiva, avanzate competenze linguistiche ed empatia, fornisce consulenza, ascolto attivo e risorse per sfide emotive, relazionali e psicologiche. Il suo obiettivo è offrire supporto incondizionato, promuovere il benessere mentale, suggerendo azioni per il miglioramento personale. Attualmente basato sul modello di OpenAI GPT-4o e ospitato su Google Cloud Run.</p>
-                    <p class="lang-en">A Telegram AI Bot that provides therapeutic support on demand. With emotional intelligence, advanced linguistic skills, and empathy, it offers counseling, active listening, and resources for emotional, relational, and psychological challenges. Its goal is to provide unconditional support, promote mental well-being, and suggest actions for personal improvement. Currently based on the OpenAI GPT-4o model and hosted on Google Cloud Run.</p>
-                </div>
-                <div class="project">
-                    <h3 class="lang-it">App Android "Prontuario del Farmaco"</h3>
-                    <h3 class="lang-en">Android App "Drug Handbook"</h3>
-                    <p class="date">2019</p>
-                    <p class="lang-it">Un'app per leggere i foglietti illustrativi dei farmaci basata sul database AIFA (Agenzia Italiana del Farmaco). Permette di localizzare le farmacie vicine attraverso le API di Google Places e impostare gli orari per l'assunzione dei farmaci. È stato sviluppato un back-end in Node.js per la registrazione degli utenti e la sincronizzazione dei dispositivi.</p>
-                    <p class="lang-en">An app to read medical drug leaflets based on the AIFA (Italian Medicines Agency) database. It allows locating nearby pharmacies through Google Places APIs and setting schedules for taking drugs. A back-end in Node.js was developed for user registration and device synchronization.</p>
-                </div>
-                <div class="project">
-                    <h3>3D game – Interstellar Horizon
-                        <a href="https://riccardo-vecchi.github.io/Interstellar-Horizon/" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48" style="fill:#228BE6;">
-                                <path d="M 41.470703 4.9863281 A 1.50015 1.50015 0 0 0 41.308594 5 L 27.5 5 A 1.50015 1.50015 0 1 0 27.5 8 L 37.878906 8 L 22.439453 23.439453 A 1.50015 1.50015 0 1 0 24.560547 25.560547 L 40 10.121094 L 40 20.5 A 1.50015 1.50015 0 1 0 43 20.5 L 43 6.6894531 A 1.50015 1.50015 0 0 0 41.470703 4.9863281 z M 12.5 8 C 8.3754991 8 5 11.375499 5 15.5 L 5 35.5 C 5 39.624501 8.3754991 43 12.5 43 L 32.5 43 C 36.624501 43 40 39.624501 40 35.5 L 40 25.5 A 1.50015 1.50015 0 1 0 37 25.5 L 37 35.5 C 37 38.003499 35.003499 40 32.5 40 L 12.5 40 C 9.9965009 40 8 38.003499 8 35.5 L 8 15.5 C 8 12.996501 9.9965009 11 12.5 11 L 22.5 11 A 1.50015 1.50015 0 1 0 22.5 8 L 12.5 8 z"></path>
-                            </svg>
-                        </a>
-                    </h3>
-                    <p class="date">2018</p>
-                    <p class="lang-it">Un gioco 3D per browser, in cui l'utente guida un'astronave nel tentativo di sopravvivere e guadagnare punti evitando diverse minacce come asteroidi e buchi neri. Il progetto è un programma WebGL sviluppato con tecnologie standard come HTML5 e JavaScript.</p>
-                    <p class="lang-en">A 3D browser game, in which the user drives a spacecraft in an attempt to survive and gain points by avoiding several threats like asteroids and black holes. The project is a WebGL program developed with standard technologies like HTML5 and JavaScript.</p>
-                </div>
-                <div class="project">
-                    <h3>SqueezeNet Neural Network</h3>
-                    <p class="date">2018</p>
-                    <p class="lang-it">Riprodotto con successo i risultati di un innovativo paper su "SqueezeNet", una nuova architettura che permette di creare reti neurali 50 volte più piccole dello stato dell'arte senza compromettere le prestazioni. Ho utilizzato il framework TensorFlow e il dataset CIFAR-10 per i test.</p>
-                    <p class="lang-en">Successfully reproduced the results of an innovative paper about "SqueezeNet", a novel architecture enabling 50x smaller NNs than the state-of-the-art without hurting performance. Used the TensorFlow framework and the CIFAR-10 dataset for testing.</p>
-                </div>
-                <div class="project">
-                    <h3>Bayes filter for Android Malware family classification</h3>
-                    <p class="date">2018</p>
-                    <p class="lang-it">Un filtro Naïve-Bayes sviluppato in Java e addestrato sul dataset Drebin. Quest'ultimo raccoglie i metadati di malware Android. Il modello ha raggiunto un'accuratezza del 97% su campioni non visti.</p>
-                    <p class="lang-en">A Naïve-Bayes filter developed in Java and trained on the Drebin dataset. The latter collects Android malware metadata. The model achieved an accuracy of 97% over unseen samples.</p>
-                </div>
-                <div class="project">
-                    <h3> Obstacle-avoiding Robot with Android and Python Clients</h3>
-                    <p class="date">2018</p>
-                    <p class="lang-it">Costruito un robot Arduino a 2 ruote che può essere controllato a distanza tramite Bluetooth o esplorare autonomamente un'area evitando ostacoli tramite un sensore ultrasonico. Per il controllo del movimento viene utilizzato un Motor Shield L298N (dual-bridge H). Ho sviluppato un'app Android e uno script Python per controllarlo.</p>
-                    <p class="lang-en">Built a 2-wheel Arduino robot that can be radio-controlled by Bluetooth or autonomously explore an area avoiding obstacles via an ultrasonic sensor. For motion control a Motor Shield L298N (dual-bridge H) is used. I developed an Android app and a Python script to control it.</p>
-                </div>
-                <div class="project">
-                    <h3>Linux Mail Slots
-                        <a href="https://github.com/Riccardo-Vecchi/LinuxMailSlots-Kernel" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48" style="fill:#228BE6;">
-                                <path d="M 41.470703 4.9863281 A 1.50015 1.50015 0 0 0 41.308594 5 L 27.5 5 A 1.50015 1.50015 0 1 0 27.5 8 L 37.878906 8 L 22.439453 23.439453 A 1.50015 1.50015 0 1 0 24.560547 25.560547 L 40 10.121094 L 40 20.5 A 1.50015 1.50015 0 1 0 43 20.5 L 43 6.6894531 A 1.50015 1.50015 0 0 0 41.470703 4.9863281 z M 12.5 8 C 8.3754991 8 5 11.375499 5 15.5 L 5 35.5 C 5 39.624501 8.3754991 43 12.5 43 L 32.5 43 C 36.624501 43 40 39.624501 40 35.5 L 40 25.5 A 1.50015 1.50015 0 1 0 37 25.5 L 37 35.5 C 37 38.003499 35.003499 40 32.5 40 L 12.5 40 C 9.9965009 40 8 38.003499 8 35.5 L 8 15.5 C 8 12.996501 9.9965009 11 12.5 11 L 22.5 11 A 1.50015 1.50015 0 1 0 22.5 8 L 12.5 8 z"></path>
-                            </svg>
-                        </a>
-                    </h3>
-                    <p class="date">2017</p>
-                    <p class="lang-it">Sviluppo di un modulo del kernel Linux altamente efficiente che fornisce un servizio simile ai mailslot di Windows, cioè un driver per file di dispositivo speciali accessibili secondo la politica FIFO.</p>
-                    <p class="lang-en">Development of a highly efficient Linux kernel module providing a service similar to Windows mailslots, i.e., a driver for special device files accessible according to FIFO policy.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="section collapsible">
-            <div class="section-header">
-                <h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><path d="M7 13.4545L9.66667 16L17 9" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="4" width="16" height="16" rx="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    <span class="lang-it">Competenze Tecniche</span>
-                    <span class="lang-en">Technical Skills</span>
-                    <span class="expand-icon">▼</span>
-                </h2>
-        </div>
-            <div class="section-content">
-                <div class="skills">
-                    <span class="skill">Cloud Computing</span>
-                    <span class="skill">GCP</span>
-                    <span class="skill">AWS</span>
-                    <span class="skill">Azure</span>
-                    <span class="skill">Linux</span>
-                    <span class="skill">SysAdmin</span>
-                    <span class="skill">Kubernetes</span>
-                    <span class="skill">Docker</span>
-                    <span class="skill">Infrastructure As Code</span>
-                    <span class="skill">Algorithms</span>
-                    <span class="skill">Data Structures</span>
-                    <span class="skill">C</span>  
-                    <span class="skill">Python</span>   
-                    <span class="skill">Java</span>
-                    <span class="skill">JavaScript</span>
-                    <span class="skill">PHP</span> 
-                    <span class="skill">Node.js</span>
-                    <span class="skill">Android</span>
-                    <span class="skill">Web Development</span>
-                    <span class="skill">REST</span>
-                    <span class="skill">SOAP</span>
-                    <span class="skill">Artificial Intelligence</span>
-                    <span class="skill">Deep Learning</span>
-                    <span class="skill">Neural Networks</span>
-                    <span class="skill">Computer Vision</span>
-                    <span class="skill">TensorFlow</span>
-                    <span class="skill">Pytorch</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="certificates" class="section collapsible">
-            <div class="section-header">
-                <h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-                    <span class="lang-it">Certificazioni</span>
-                    <span class="lang-en">Certifications</span>
-                    <span class="expand-icon">▼</span>
-                </h2>
-            </div>
-            <div class="section-content">
-                <div class="skills">
-                    <a href="https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/6a7802f6-9b8a-456b-85ec-1fb3783ac141-riccardo-vecchi-874dca7c-6484-4c5c-ba49-80ce756fbea1-certificate.pdf" target="_blank">
-                        <img id="CKAD" alt="CKAD" src="assets/images/kubernetes-ckad-color-1024x1003.png" style="width: 135px; height: 135px;">
-                    </a>         
-                </div>
-            </div>
-        </section>
-
-        <section id="education" class="section collapsible">
-            <div class="section-header">
-                <h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-                    <span class="lang-it">Formazione</span>
-                    <span class="lang-en">Education</span>
-                    <span class="expand-icon">▼</span>
-                </h2>
-            </div>
-            <div class="section-content">
-                <div class="lang-it">
-                    <h3>Laurea Magistrale - Engineering in Computer Science</h3>
-                    <p>Università degli Studi "La Sapienza", Roma<br>
-                    2016 - 2019<br>
-                    Voto finale: 110/110 cum laude<br>
-                    Tesi: "Compression Techniques for Deep Quaternion Neural Networks"
-                    <a href="assets/files/thesis.pdf" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48" style="fill:#228BE6;">
-                            <path d="M 41.470703 4.9863281 A 1.50015 1.50015 0 0 0 41.308594 5 L 27.5 5 A 1.50015 1.50015 0 1 0 27.5 8 L 37.878906 8 L 22.439453 23.439453 A 1.50015 1.50015 0 1 0 24.560547 25.560547 L 40 10.121094 L 40 20.5 A 1.50015 1.50015 0 1 0 43 20.5 L 43 6.6894531 A 1.50015 1.50015 0 0 0 41.470703 4.9863281 z M 12.5 8 C 8.3754991 8 5 11.375499 5 15.5 L 5 35.5 C 5 39.624501 8.3754991 43 12.5 43 L 32.5 43 C 36.624501 43 40 39.624501 40 35.5 L 40 25.5 A 1.50015 1.50015 0 1 0 37 25.5 L 37 35.5 C 37 38.003499 35.003499 40 32.5 40 L 12.5 40 C 9.9965009 40 8 38.003499 8 35.5 L 8 15.5 C 8 12.996501 9.9965009 11 12.5 11 L 22.5 11 A 1.50015 1.50015 0 1 0 22.5 8 L 12.5 8 z"></path>
-                        </svg>
-                    </a>
-                </p>
-                    <h3>Laurea Triennale - Ingegneria Informatica e Automatica</h3>
-                    <p>Università degli Studi "La Sapienza", Roma<br>
-                    2011 - 2016<br>
-                    Voto finale: 96/110<br>
-                    Tesi: "Servizio Elenco Telefonico Remoto - Architettura Client/Server"</p>
-                </div>
-                <div class="lang-en">
-                    <h3>Master of Science - Engineering in Computer Science</h3>
-                    <p>Sapienza University of Rome<br>
-                    2016 - 2019<br>
-                    Final Grade: 110/110 cum laude<br>
-                    Thesis: "Compression Techniques for Deep Quaternion Neural Networks"
-                    <a href="assets/files/thesis.pdf" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48" style="fill:#228BE6;">
-                            <path d="M 41.470703 4.9863281 A 1.50015 1.50015 0 0 0 41.308594 5 L 27.5 5 A 1.50015 1.50015 0 1 0 27.5 8 L 37.878906 8 L 22.439453 23.439453 A 1.50015 1.50015 0 1 0 24.560547 25.560547 L 40 10.121094 L 40 20.5 A 1.50015 1.50015 0 1 0 43 20.5 L 43 6.6894531 A 1.50015 1.50015 0 0 0 41.470703 4.9863281 z M 12.5 8 C 8.3754991 8 5 11.375499 5 15.5 L 5 35.5 C 5 39.624501 8.3754991 43 12.5 43 L 32.5 43 C 36.624501 43 40 39.624501 40 35.5 L 40 25.5 A 1.50015 1.50015 0 1 0 37 25.5 L 37 35.5 C 37 38.003499 35.003499 40 32.5 40 L 12.5 40 C 9.9965009 40 8 38.003499 8 35.5 L 8 15.5 C 8 12.996501 9.9965009 11 12.5 11 L 22.5 11 A 1.50015 1.50015 0 1 0 22.5 8 L 12.5 8 z"></path>
-                        </svg>
-                    </a>
-                </p>
-                    <h3>Bachelor - Computer and Automation Engineering</h3>
-                    <p>Sapienza University of Rome<br>
-                    2011 - 2016<br>
-                    Final Grade: 96/110<br>
-                    Thesis: "Remote Phone Directory Service - Client/Server Architecture"</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="invisible_gap" class="section collapsible">
-            <div class="section-header"></div>
-        </section>
-
-    </main>
-
-    <div class="copyright-container">
-        Copyright ©2024 <a href="#" title="Return back to top">Riccardo Vecchi</a>
-    </div>
-
-    <script>
-        let currentLanguage = 'it';
-
-        // Language toggle
-        function toggleLanguage() {
-            if (currentLanguage === 'it') {
-                currentLanguage = 'en';
-                document.getElementById('languageToggle').textContent = 'Italiano';
-            } else {
-                currentLanguage = 'it';
-                document.getElementById('languageToggle').textContent = 'English';
+            #languageToggle:hover {
+                background-color: #2980b9;
             }
-            
-            document.querySelectorAll('[class^="lang-"]').forEach(el => { el.style.display = 'none'; });
-            
-            document.querySelectorAll(`.lang-${currentLanguage}`).forEach(el => { el.style.display = 'block'; });
-        }
+            #invisible_gap {
+                visibility: hidden;
+            }
+            .social-icons {
+                margin-top: 1.3em;
+            }
+            .social-icons a {
+                color: white;
+                font-size: 1.5em;
+                margin: 0 0.6em;
+                transition: color 0.3s;
+            }
+            .social-icons a:hover {
+                color: var(--secondary-color);
+            }
+            @font-face {
+                font-family: 'FontAwesome';
+                src: url('assets/fonts/fa-brands-400.woff2') format('woff2'),
+                    url('assets/fonts/fa-brands-400.ttf') format('truetype');
+                font-weight: normal;
+                font-style: normal;
+            }
+            .fab {
+                font-family: 'FontAwesome';
+            }
+            .date {
+                font-style: italic;
+                color: #666;
+            }
+            .url {
+                color: var(--secondary-color);
+                text-decoration: none;
+            }
+            .url:hover {
+                text-decoration: underline;
+            }
+            .copyright-container {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                text-align: center;
+                padding: 0.6em 0;
+            }
+            @media (max-width: 600px) {
+                body {
+                    padding: 0.6em;
+                }
+                header {
+                    flex-direction: column;
+                    text-align: center;
+                }
+                .profile-image {
+                    width: 140px;
+                    height: 140px;
+                }
+                .section {
+                    padding: 0.9em;
+                }
+                .section-header h2 {
+                    font-size: 1em;
+                }
+                .skill {
+                    font-size: 0.8em;
+                    padding: 0.3em 0.5em;
+                }
+                #languageToggle {
+                    padding: 0.5em 0.8em;
+                    font-size: 0.9em;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <button id="languageToggle" onclick="toggleLanguage()">English</button>
+        <header>
+            <img src="assets/images/profile_photo_2.jpg" alt="Riccardo Vecchi" class="profile-image">
+            <div class="header-content">
+                <p class="lang-it">Riccardo Vecchi<br>Cloud Architect | IT Solution Architect</p>
+                <p class="lang-en">Riccardo Vecchi<br>Cloud Architect | IT Solution Architect</p>
+                <div class="location">
+                    <span class="lang-it">
+                        <svg height="20" fill="#ffffff" aria-label="Location" class="octicon octicon-location" viewBox="0 0 16 16" version="1.1" width="20" role="img">
+                        <path fill-rule="evenodd" d="M11.536 3.464a5 5 0 010 7.072L8 14.07l-3.536-3.535a5 5 0 117.072-7.072v.001zm1.06 8.132a6.5 6.5 0 10-9.192 0l3.535 3.536a1.5 1.5 0 002.122 0l3.535-3.536zM8 9a2 2 0 100-4 2 2 0 000 4z"></path>
+                    </svg> Roma, Italia</span>
+                    <span class="lang-en">
+                        <svg height="20" fill="#ffffff" aria-label="Location" class="octicon octicon-location" viewBox="0 0 16 16" version="1.1" width="20" role="img">
+                        <path fill-rule="evenodd" d="M11.536 3.464a5 5 0 010 7.072L8 14.07l-3.536-3.535a5 5 0 117.072-7.072v.001zm1.06 8.132a6.5 6.5 0 10-9.192 0l3.535 3.536a1.5 1.5 0 002.122 0l3.535-3.536zM8 9a2 2 0 100-4 2 2 0 000 4z"></path>
+                    </svg> Rome, Italy</span>
+                </div>
+                <div class="social-icons">
+                    <a href="https://linkedin.com/in/vecchiriccardo/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Riccardo-Vecchi" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://x.com/RiccardoVecchi1" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </header>
 
-        // Initialize the page in Italian
-        toggleLanguage();
-        toggleLanguage();
+        <main>
+            <section id="about" class="section collapsible"> 
+                <div class="section-header"> 
+                    <h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        <span class="lang-it">Chi Sono</span>
+                        <span class="lang-en">About Me</span>
+                        <span class="expand-icon">▼</span>
+                    </h2>
+                </div>
+                <div class="section-content">
+                    <p class="lang-it">Da sempre appassionato di informatica, automazione e il mondo dei computer in generale, sono un professionista orientato ai risultati con oltre 5 anni di esperienza nella consulenza e progettazione ICT. Problem solver efficace, con un approccio pratico e capacità di comunicazione ben sviluppate a tutti i livelli. Abituato a lavorare in ambienti multinazionali e multiculturali, attualmente sono focalizzato nell'approfondire tecnologie Cloud.</p>
+                    <p class="lang-en">Always passionate about IT, Automation, and the computers' world in general, I am a results-oriented professional with over 5 years of experience in ICT consulting and design. I am an effective problem solver with a practical approach and well-developed communication skills at all levels. Used to working in multinational and multicultural environments, I am currently focused on deepening my knowledge of Cloud technologies.</p>
+                </div>
+            </section>
 
-        // Skill highlight
-        const skills = document.querySelectorAll('.skill');
-        skills.forEach(skill => {
-            skill.addEventListener('mouseover', () => {
-                skills.forEach(s => {
-                    if (s !== skill) {
-                        s.style.opacity = '0.5';
-                    }
+            <section id="experience" class="section collapsible">
+                <div class="section-header">
+                    <h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        <span class="lang-it">Esperienza Lavorativa</span>
+                        <span class="lang-en">Work Experience</span>
+                        <span class="expand-icon">▼</span>
+                    </h2>
+                </div>
+                <div class="section-content">
+                    <div class="project">
+                        <h3><img src="assets/images/tim_logo.png" alt="TIM Enterprise" width="75" height="20"> Cloud Architect / Technical Presales</h3>
+                        <p class="date">11/2022 - Present</p>
+                        <ul class="lang-it">
+                            <li><b>Progettazione e implementazione architetture e soluzioni Cloud</b> su piattaforme pubbliche (GCP, AWS, Azure) e private (TIM Cloud basato su VMware), assicurando l'efficienza e la scalabilità delle infrastrutture IT.</li>            
+                            <li><b>Quotazioni e stime economiche</b> per le soluzioni proposte, analizzando costi e benefici per garantire la migliore soluzione tecnologica ed economica per il cliente.</li>
+                            <li><b>Mercato di Riferimento Private italiano ed europeo</b>, in particolare aziende del segmento Top e Large.</li>
+                            <li><b>Sviluppo, innovazione e aggiornamento continuo</b> sulle ultime tecnologie e tendenze del cloud computing, contribuendo allo sviluppo di nuove soluzioni e all'innovazione dei servizi offerti. Sviluppo di soluzioni di Hybrid Cloud e Disaster Recovery.</li>
+                        </ul>
+                        <ul class="lang-en">
+                            <li><b>Cloud Architecture Design and cloud architecture implementation</b> on public platforms (GCP, AWS, Azure) and private ones (TIM Cloud based on VMware), ensuring efficiency and scalability of IT infrastructures.</li>
+                            <li><b>Quotations and Cost Estimates</b> for proposed solutions, analyzing costs and benefits to ensure the best technological and economic solution for the customer.</li>
+                            <li><b>Italian and European Private as Reference Market</b>, particularly companies in the Top and Large segment.</li>
+                            <li><b>Development and Innovation and continuously updated</b> on the latest technologies and trends in cloud computing, contributing to the development of new solutions and the innovation of the services offered. Designo of hybrid cloud and Disaster Recovery solutions.</li>
+                        </ul>
+                    </div>
+                    <div class="project">
+                        <h3><img src="assets/images/huawei_logo.png" alt="Huawei Technologies" width="40" height="40"> IT Solution Architect</h3>
+                        <p class="date">03/2022 - 11/2022</p>
+                        <ul class="lang-it">
+                            <li>Solution Architect nel dominio ICT Service per operatori di rete italiani.</li>
+                            <li>Interfaccia cliente per pre-vendita di servizi e presentazione di soluzioni E2E (fino a livello CXO).</li>
+                            <li>Responsabile dello sviluppo e personalizzazione di PoC (Proof of Concept) del portfolio Huawei.</li>
+                            <li>Proprietario dell'Arrangement di Supporto alle Offerte e della Proposta di Costo della Soluzione di Servizio.</li>
+                        </ul>
+                        <ul class="lang-en">
+                            <li>Solution Architect within ICT Service domain for Italian Network Carriers.</li>
+                            <li>Customer interface for Service Pre-Sale and E2E Solution presentation (up to CXO level).</li>
+                            <li>Responsible for PoC (Proof of Concept) development & customization of Huawei portfolio.</li>
+                            <li>Owner for the Bidding Support Arrangement and Service Solution Cost Proposal.</li>
+                        </ul>
+                    </div>
+                    <div class="project">
+                        <h3><img src="assets/images/huawei_logo.png" alt="Huawei Technologies" width="40" height="40"> Technical Director</h3>
+                        <p class="date">03/2021 - 11/2022</p>
+                        <ul class="lang-it">
+                            <li>Gestione e leadership di un piccolo team distribuito.</li>
+                            <li>Responsabile della Soddisfazione del Cliente del progetto.</li>
+                            <li>Responsabile per Problemi Tecnici, Escalation Tecniche, Ottimizzazione dei Costi e Operazioni di Sicurezza della Rete secondo il Processo Huawei.</li>
+                            <li>Completato con successo la migrazione di una piattaforma cloud legacy a una soluzione on-premise (11 server, oltre 50 VM, configurazione della rete, virtualizzazione, installazione software, integrazione di terze parti).</li>
+                        </ul>
+                        <ul class="lang-en">
+                            <li>Management and lead of a small and distributed team.</li>
+                            <li>Accountable for project Customer Satisfaction.</li>
+                            <li>Responsible for Technical Issues, Technical Escalations, Cost Optimization, and Network Security Operations according to the Huawei Process.</li>
+                            <li>Successfully migrated a cloud legacy platform to an on-premise solution (11 servers, 50+ VMs, network configuration, virtualization, software installation, 3rd party integration).</li>
+                        </ul>
+                    </div>
+                    <div class="project">
+                        <h3><img src="assets/images/huawei_logo.png" alt="Huawei Technologies" width="40" height="40"> Software Development Engineer</h3>
+                        <p class="date">09/2019 - 03/2021</p>
+                        <ul class="lang-it">
+                            <li>Interfaccia con il cliente per lo sviluppo di nuove funzionalità su Automazione/Trasformazione Digitale/Orchestrazione della Rete.</li>
+                            <li>Sviluppo back-end e front-end dei servizi di Trouble Ticket e Fault Management (FM) su una piattaforma ospitata su AWS, AUTIN (AUTomation INtelligence).</li>
+                            <li>Servizio di sysadmin e risoluzione problemi in chiamata per garantire il 100% di disponibilità della piattaforma.</li>
+                            <li>Integrazione di 10+ EMS (ad es. NOKIA, HUAWEI, CISCO, ZTE, ZABBIX, INFINERA) basata su protocolli CORBA e SNMP con FM basato su IBM Netcool.</li>
+                            <li>Sviluppo e personalizzazione di oltre 4 dashboard di monitoraggio KPI.</li>                        
+                        </ul>
+                        <ul class="lang-en">
+                            <li>Customer interface for new features development on Automation/Digital Transformation/Network Orchestration.</li>
+                            <li>Back-end and front-end development of Trouble Ticket and Fault Management (FM) services on an AWS hosted platform, AUTIN (AUTomation INtelligence).</li>
+                            <li>Sysadmin and on-call troubleshooting service to guarantee 100% platform availability.</li>
+                            <li>10+ EMS Integration (e.g. NOKIA, HUAWEI, CISCO, ZTE, ZABBIX, INFINERA) based on CORBA and SNMP protocols with IBM Netcool-based FM.</li>
+                            <li>Development and customization of 4+ KPI tracking dashboards.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="publications" class="section collapsible">
+                <div class="section-header">
+                    <h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        <span class="lang-it">Pubblicazioni</span>
+                        <span class="lang-en">Publications</span>
+                        <span class="expand-icon">▼</span>
+                    </h2>
+                </div>
+                <div class="section-content">
+                    <div class="publication">
+                        <h3>Compressing deep quaternion neural networks with targeted regularization
+                            <a href="https://iris.uniroma1.it/retrieve/handle/11573/1503651/1708463/Vecchi_Compressing_2020.pdf" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48" style="fill:#228BE6;">
+                                    <path d="M 41.470703 4.9863281 A 1.50015 1.50015 0 0 0 41.308594 5 L 27.5 5 A 1.50015 1.50015 0 1 0 27.5 8 L 37.878906 8 L 22.439453 23.439453 A 1.50015 1.50015 0 1 0 24.560547 25.560547 L 40 10.121094 L 40 20.5 A 1.50015 1.50015 0 1 0 43 20.5 L 43 6.6894531 A 1.50015 1.50015 0 0 0 41.470703 4.9863281 z M 12.5 8 C 8.3754991 8 5 11.375499 5 15.5 L 5 35.5 C 5 39.624501 8.3754991 43 12.5 43 L 32.5 43 C 36.624501 43 40 39.624501 40 35.5 L 40 25.5 A 1.50015 1.50015 0 1 0 37 25.5 L 37 35.5 C 37 38.003499 35.003499 40 32.5 40 L 12.5 40 C 9.9965009 40 8 38.003499 8 35.5 L 8 15.5 C 8 12.996501 9.9965009 11 12.5 11 L 22.5 11 A 1.50015 1.50015 0 1 0 22.5 8 L 12.5 8 z"></path>
+                                </svg>
+                            </a>
+                        </h3>                   
+                        <p class="date">08/07/2020, CAAI Transactions on Intelligence Technology</p>
+                        <p class="lang-it">Abstract: Le reti neurali ipercomplesse trovano applicazioni in molteplici campi, dalla ricostruzione di immagini all'elaborazione audio 3D. Progettando nuove tecniche di regolarizzazione, gli autori mostrano come minimizzare il numero di connessioni e neuroni superando gli approcci classici, risultando in modelli più piccoli e veloci, adatti per applicazioni a basso consumo energetico e in tempo reale.</p>
+                        <p class="lang-en">Abstract: Hyper-complex NNs find applications in multiple fields, from image reconstruction to 3D audio processing. By designing new regularization techniques, the authors show how to minimize the number of connections and neurons outperforming classical approaches, resulting in smaller and faster models, suitable for low-power and real-time applications.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="section collapsible">
+                <div class="section-header">
+                    <h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                        <span class="lang-it">Progetti</span>
+                        <span class="lang-en">Projects</span>
+                        <span class="expand-icon">▼</span>
+                    </h2>
+                </div>
+                <div class="section-content">
+                    <div class="project">
+                        <h3>Telegram Bot - HarmonyAI
+                            <a href="https://t.me/Harmony_AIbot" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48" style="fill:#228BE6;">
+                                    <path d="M 41.470703 4.9863281 A 1.50015 1.50015 0 0 0 41.308594 5 L 27.5 5 A 1.50015 1.50015 0 1 0 27.5 8 L 37.878906 8 L 22.439453 23.439453 A 1.50015 1.50015 0 1 0 24.560547 25.560547 L 40 10.121094 L 40 20.5 A 1.50015 1.50015 0 1 0 43 20.5 L 43 6.6894531 A 1.50015 1.50015 0 0 0 41.470703 4.9863281 z M 12.5 8 C 8.3754991 8 5 11.375499 5 15.5 L 5 35.5 C 5 39.624501 8.3754991 43 12.5 43 L 32.5 43 C 36.624501 43 40 39.624501 40 35.5 L 40 25.5 A 1.50015 1.50015 0 1 0 37 25.5 L 37 35.5 C 37 38.003499 35.003499 40 32.5 40 L 12.5 40 C 9.9965009 40 8 38.003499 8 35.5 L 8 15.5 C 8 12.996501 9.9965009 11 12.5 11 L 22.5 11 A 1.50015 1.50015 0 1 0 22.5 8 L 12.5 8 z"></path>
+                                </svg>
+                            </a>
+                        </h3>
+                        <p class="date">2024</p>
+                        <p class="lang-it">Un assistente AI Bot di Telegram che offre supporto terapeutico su richiesta. Con intelligenza emotiva, avanzate competenze linguistiche ed empatia, fornisce consulenza, ascolto attivo e risorse per sfide emotive, relazionali e psicologiche. Il suo obiettivo è offrire supporto incondizionato, promuovere il benessere mentale, suggerendo azioni per il miglioramento personale. Attualmente basato sul modello di OpenAI GPT-4o e ospitato su Google Cloud Run.</p>
+                        <p class="lang-en">A Telegram AI Bot that provides therapeutic support on demand. With emotional intelligence, advanced linguistic skills, and empathy, it offers counseling, active listening, and resources for emotional, relational, and psychological challenges. Its goal is to provide unconditional support, promote mental well-being, and suggest actions for personal improvement. Currently based on the OpenAI GPT-4o model and hosted on Google Cloud Run.</p>
+                    </div>
+                    <div class="project">
+                        <h3 class="lang-it">App Android "Prontuario del Farmaco"</h3>
+                        <h3 class="lang-en">Android App "Drug Handbook"</h3>
+                        <p class="date">2019</p>
+                        <p class="lang-it">Un'app per leggere i foglietti illustrativi dei farmaci basata sul database AIFA (Agenzia Italiana del Farmaco). Permette di localizzare le farmacie vicine attraverso le API di Google Places e impostare gli orari per l'assunzione dei farmaci. È stato sviluppato un back-end in Node.js per la registrazione degli utenti e la sincronizzazione dei dispositivi.</p>
+                        <p class="lang-en">An app to read medical drug leaflets based on the AIFA (Italian Medicines Agency) database. It allows locating nearby pharmacies through Google Places APIs and setting schedules for taking drugs. A back-end in Node.js was developed for user registration and device synchronization.</p>
+                    </div>
+                    <div class="project">
+                        <h3>3D game – Interstellar Horizon
+                            <a href="https://riccardo-vecchi.github.io/Interstellar-Horizon/" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48" style="fill:#228BE6;">
+                                    <path d="M 41.470703 4.9863281 A 1.50015 1.50015 0 0 0 41.308594 5 L 27.5 5 A 1.50015 1.50015 0 1 0 27.5 8 L 37.878906 8 L 22.439453 23.439453 A 1.50015 1.50015 0 1 0 24.560547 25.560547 L 40 10.121094 L 40 20.5 A 1.50015 1.50015 0 1 0 43 20.5 L 43 6.6894531 A 1.50015 1.50015 0 0 0 41.470703 4.9863281 z M 12.5 8 C 8.3754991 8 5 11.375499 5 15.5 L 5 35.5 C 5 39.624501 8.3754991 43 12.5 43 L 32.5 43 C 36.624501 43 40 39.624501 40 35.5 L 40 25.5 A 1.50015 1.50015 0 1 0 37 25.5 L 37 35.5 C 37 38.003499 35.003499 40 32.5 40 L 12.5 40 C 9.9965009 40 8 38.003499 8 35.5 L 8 15.5 C 8 12.996501 9.9965009 11 12.5 11 L 22.5 11 A 1.50015 1.50015 0 1 0 22.5 8 L 12.5 8 z"></path>
+                                </svg>
+                            </a>
+                        </h3>
+                        <p class="date">2018</p>
+                        <p class="lang-it">Un gioco 3D per browser, in cui l'utente guida un'astronave nel tentativo di sopravvivere e guadagnare punti evitando diverse minacce come asteroidi e buchi neri. Il progetto è un programma WebGL sviluppato con tecnologie standard come HTML5 e JavaScript.</p>
+                        <p class="lang-en">A 3D browser game, in which the user drives a spacecraft in an attempt to survive and gain points by avoiding several threats like asteroids and black holes. The project is a WebGL program developed with standard technologies like HTML5 and JavaScript.</p>
+                    </div>
+                    <div class="project">
+                        <h3>SqueezeNet Neural Network</h3>
+                        <p class="date">2018</p>
+                        <p class="lang-it">Riprodotto con successo i risultati di un innovativo paper su "SqueezeNet", una nuova architettura che permette di creare reti neurali 50 volte più piccole dello stato dell'arte senza compromettere le prestazioni. Ho utilizzato il framework TensorFlow e il dataset CIFAR-10 per i test.</p>
+                        <p class="lang-en">Successfully reproduced the results of an innovative paper about "SqueezeNet", a novel architecture enabling 50x smaller NNs than the state-of-the-art without hurting performance. Used the TensorFlow framework and the CIFAR-10 dataset for testing.</p>
+                    </div>
+                    <div class="project">
+                        <h3>Bayes filter for Android Malware family classification</h3>
+                        <p class="date">2018</p>
+                        <p class="lang-it">Un filtro Naïve-Bayes sviluppato in Java e addestrato sul dataset Drebin. Quest'ultimo raccoglie i metadati di malware Android. Il modello ha raggiunto un'accuratezza del 97% su campioni non visti.</p>
+                        <p class="lang-en">A Naïve-Bayes filter developed in Java and trained on the Drebin dataset. The latter collects Android malware metadata. The model achieved an accuracy of 97% over unseen samples.</p>
+                    </div>
+                    <div class="project">
+                        <h3> Obstacle-avoiding Robot with Android and Python Clients</h3>
+                        <p class="date">2018</p>
+                        <p class="lang-it">Costruito un robot Arduino a 2 ruote che può essere controllato a distanza tramite Bluetooth o esplorare autonomamente un'area evitando ostacoli tramite un sensore ultrasonico. Per il controllo del movimento viene utilizzato un Motor Shield L298N (dual-bridge H). Ho sviluppato un'app Android e uno script Python per controllarlo.</p>
+                        <p class="lang-en">Built a 2-wheel Arduino robot that can be radio-controlled by Bluetooth or autonomously explore an area avoiding obstacles via an ultrasonic sensor. For motion control a Motor Shield L298N (dual-bridge H) is used. I developed an Android app and a Python script to control it.</p>
+                    </div>
+                    <div class="project">
+                        <h3>Linux Mail Slots
+                            <a href="https://github.com/Riccardo-Vecchi/LinuxMailSlots-Kernel" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48" style="fill:#228BE6;">
+                                    <path d="M 41.470703 4.9863281 A 1.50015 1.50015 0 0 0 41.308594 5 L 27.5 5 A 1.50015 1.50015 0 1 0 27.5 8 L 37.878906 8 L 22.439453 23.439453 A 1.50015 1.50015 0 1 0 24.560547 25.560547 L 40 10.121094 L 40 20.5 A 1.50015 1.50015 0 1 0 43 20.5 L 43 6.6894531 A 1.50015 1.50015 0 0 0 41.470703 4.9863281 z M 12.5 8 C 8.3754991 8 5 11.375499 5 15.5 L 5 35.5 C 5 39.624501 8.3754991 43 12.5 43 L 32.5 43 C 36.624501 43 40 39.624501 40 35.5 L 40 25.5 A 1.50015 1.50015 0 1 0 37 25.5 L 37 35.5 C 37 38.003499 35.003499 40 32.5 40 L 12.5 40 C 9.9965009 40 8 38.003499 8 35.5 L 8 15.5 C 8 12.996501 9.9965009 11 12.5 11 L 22.5 11 A 1.50015 1.50015 0 1 0 22.5 8 L 12.5 8 z"></path>
+                                </svg>
+                            </a>
+                        </h3>
+                        <p class="date">2017</p>
+                        <p class="lang-it">Sviluppo di un modulo del kernel Linux altamente efficiente che fornisce un servizio simile ai mailslot di Windows, cioè un driver per file di dispositivo speciali accessibili secondo la politica FIFO.</p>
+                        <p class="lang-en">Development of a highly efficient Linux kernel module providing a service similar to Windows mailslots, i.e., a driver for special device files accessible according to FIFO policy.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="section collapsible">
+                <div class="section-header">
+                    <h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><path d="M7 13.4545L9.66667 16L17 9" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="4" width="16" height="16" rx="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span class="lang-it">Competenze Tecniche</span>
+                        <span class="lang-en">Technical Skills</span>
+                        <span class="expand-icon">▼</span>
+                    </h2>
+            </div>
+                <div class="section-content">
+                    <div class="skills">
+                        <span class="skill">Cloud Computing</span>
+                        <span class="skill">GCP</span>
+                        <span class="skill">AWS</span>
+                        <span class="skill">Azure</span>
+                        <span class="skill">Linux</span>
+                        <span class="skill">SysAdmin</span>
+                        <span class="skill">Kubernetes</span>
+                        <span class="skill">Docker</span>
+                        <span class="skill">Infrastructure As Code</span>
+                        <span class="skill">Algorithms</span>
+                        <span class="skill">Data Structures</span>
+                        <span class="skill">C</span>  
+                        <span class="skill">Python</span>   
+                        <span class="skill">Java</span>
+                        <span class="skill">JavaScript</span>
+                        <span class="skill">PHP</span> 
+                        <span class="skill">Node.js</span>
+                        <span class="skill">Android</span>
+                        <span class="skill">Web Development</span>
+                        <span class="skill">REST</span>
+                        <span class="skill">SOAP</span>
+                        <span class="skill">Artificial Intelligence</span>
+                        <span class="skill">Deep Learning</span>
+                        <span class="skill">Neural Networks</span>
+                        <span class="skill">Computer Vision</span>
+                        <span class="skill">TensorFlow</span>
+                        <span class="skill">Pytorch</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="certificates" class="section collapsible">
+                <div class="section-header">
+                    <h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                        <span class="lang-it">Certificazioni</span>
+                        <span class="lang-en">Certifications</span>
+                        <span class="expand-icon">▼</span>
+                    </h2>
+                </div>
+                <div class="section-content">
+                    <div class="skills">
+                        <a href="https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/6a7802f6-9b8a-456b-85ec-1fb3783ac141-riccardo-vecchi-874dca7c-6484-4c5c-ba49-80ce756fbea1-certificate.pdf" target="_blank">
+                            <img id="CKAD" alt="CKAD" src="assets/images/kubernetes-ckad-color-1024x1003.png" style="width: 135px; height: 135px;">
+                        </a>         
+                    </div>
+                </div>
+            </section>
+
+            <section id="education" class="section collapsible">
+                <div class="section-header">
+                    <h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                        <span class="lang-it">Formazione</span>
+                        <span class="lang-en">Education</span>
+                        <span class="expand-icon">▼</span>
+                    </h2>
+                </div>
+                <div class="section-content">
+                    <div class="lang-it">
+                        <h3>Laurea Magistrale - Engineering in Computer Science</h3>
+                        <p>Università degli Studi "La Sapienza", Roma<br>
+                        2016 - 2019<br>
+                        Voto finale: 110/110 cum laude<br>
+                        Tesi: "Compression Techniques for Deep Quaternion Neural Networks"
+                        <a href="assets/files/thesis.pdf" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48" style="fill:#228BE6;">
+                                <path d="M 41.470703 4.9863281 A 1.50015 1.50015 0 0 0 41.308594 5 L 27.5 5 A 1.50015 1.50015 0 1 0 27.5 8 L 37.878906 8 L 22.439453 23.439453 A 1.50015 1.50015 0 1 0 24.560547 25.560547 L 40 10.121094 L 40 20.5 A 1.50015 1.50015 0 1 0 43 20.5 L 43 6.6894531 A 1.50015 1.50015 0 0 0 41.470703 4.9863281 z M 12.5 8 C 8.3754991 8 5 11.375499 5 15.5 L 5 35.5 C 5 39.624501 8.3754991 43 12.5 43 L 32.5 43 C 36.624501 43 40 39.624501 40 35.5 L 40 25.5 A 1.50015 1.50015 0 1 0 37 25.5 L 37 35.5 C 37 38.003499 35.003499 40 32.5 40 L 12.5 40 C 9.9965009 40 8 38.003499 8 35.5 L 8 15.5 C 8 12.996501 9.9965009 11 12.5 11 L 22.5 11 A 1.50015 1.50015 0 1 0 22.5 8 L 12.5 8 z"></path>
+                            </svg>
+                        </a>
+                    </p>
+                        <h3>Laurea Triennale - Ingegneria Informatica e Automatica</h3>
+                        <p>Università degli Studi "La Sapienza", Roma<br>
+                        2011 - 2016<br>
+                        Voto finale: 96/110<br>
+                        Tesi: "Servizio Elenco Telefonico Remoto - Architettura Client/Server"</p>
+                    </div>
+                    <div class="lang-en">
+                        <h3>Master of Science - Engineering in Computer Science</h3>
+                        <p>Sapienza University of Rome<br>
+                        2016 - 2019<br>
+                        Final Grade: 110/110 cum laude<br>
+                        Thesis: "Compression Techniques for Deep Quaternion Neural Networks"
+                        <a href="assets/files/thesis.pdf" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48" style="fill:#228BE6;">
+                                <path d="M 41.470703 4.9863281 A 1.50015 1.50015 0 0 0 41.308594 5 L 27.5 5 A 1.50015 1.50015 0 1 0 27.5 8 L 37.878906 8 L 22.439453 23.439453 A 1.50015 1.50015 0 1 0 24.560547 25.560547 L 40 10.121094 L 40 20.5 A 1.50015 1.50015 0 1 0 43 20.5 L 43 6.6894531 A 1.50015 1.50015 0 0 0 41.470703 4.9863281 z M 12.5 8 C 8.3754991 8 5 11.375499 5 15.5 L 5 35.5 C 5 39.624501 8.3754991 43 12.5 43 L 32.5 43 C 36.624501 43 40 39.624501 40 35.5 L 40 25.5 A 1.50015 1.50015 0 1 0 37 25.5 L 37 35.5 C 37 38.003499 35.003499 40 32.5 40 L 12.5 40 C 9.9965009 40 8 38.003499 8 35.5 L 8 15.5 C 8 12.996501 9.9965009 11 12.5 11 L 22.5 11 A 1.50015 1.50015 0 1 0 22.5 8 L 12.5 8 z"></path>
+                            </svg>
+                        </a>
+                    </p>
+                        <h3>Bachelor - Computer and Automation Engineering</h3>
+                        <p>Sapienza University of Rome<br>
+                        2011 - 2016<br>
+                        Final Grade: 96/110<br>
+                        Thesis: "Remote Phone Directory Service - Client/Server Architecture"</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="invisible_gap" class="section collapsible">
+                <div class="section-header"></div>
+            </section>
+
+        </main>
+
+        <div class="copyright-container">
+            Copyright ©2024 <a href="#" title="Return back to top">Riccardo Vecchi</a>
+        </div>
+
+        <script>
+            let currentLanguage = 'it';
+
+            // Language toggle
+            function toggleLanguage() {
+                if (currentLanguage === 'it') {
+                    currentLanguage = 'en';
+                    document.getElementById('languageToggle').textContent = 'Italiano';
+                } else {
+                    currentLanguage = 'it';
+                    document.getElementById('languageToggle').textContent = 'English';
+                }
+                
+                document.querySelectorAll('[class^="lang-"]').forEach(el => { el.style.display = 'none'; });
+                
+                document.querySelectorAll(`.lang-${currentLanguage}`).forEach(el => { el.style.display = 'block'; });
+            }
+
+            // Initialize the page in Italian
+            toggleLanguage();
+            toggleLanguage();
+
+            // Skill highlight
+            const skills = document.querySelectorAll('.skill');
+            skills.forEach(skill => {
+                skill.addEventListener('mouseover', () => {
+                    skills.forEach(s => {
+                        if (s !== skill) {
+                            s.style.opacity = '0.5';
+                        }
+                    });
+                });
+                skill.addEventListener('mouseout', () => {
+                    skills.forEach(s => {
+                    s.style.opacity = '1';
+                    });
                 });
             });
-            skill.addEventListener('mouseout', () => {
-                skills.forEach(s => {
-                s.style.opacity = '1';
-                });
+
+            // Collapsible section
+            document.addEventListener('DOMContentLoaded', function() {
+                const collapsibles = document.querySelectorAll('.section.collapsible');
+                
+                collapsibles.forEach(section => section.addEventListener('click', () => {
+                    section.classList.toggle('active')}))
             });
-        });
 
-        // Collapsible section
-        document.addEventListener('DOMContentLoaded', function() {
-            const collapsibles = document.querySelectorAll('.section.collapsible');
-            
-            collapsibles.forEach(section => section.addEventListener('click', () => {
-                section.classList.toggle('active')}))
-        });
-
-    </script>
+        </script>
+    </body>
+</html>
