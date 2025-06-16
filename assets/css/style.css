@@ -74,15 +74,7 @@ section {
     max-height: fit-content;
     transition: max-height 0.5s ease-in;
 }
-/* Styles for the old text-based expand icon (can be removed if no longer used) */
-.expand-icon {
-    /* transition: transform 0.3s ease; (Removed as SVG handles its own transition) */
-}
-.section.active .expand-icon {
-    /* transform: rotate(180deg); (Removed as SVG handles its own rotation) */
-}
 
-/* Styles for the new SVG expand icon */
 .expand-svg-icon {
     transition: transform 0.3s ease;
     margin-left: auto; /* Pushes the icon to the right */
@@ -149,8 +141,8 @@ section {
 }
 @font-face {
     font-family: 'FontAwesome';
-    src: url('assets/fonts/fa-brands-400.woff2') format('woff2'),
-         url('assets/fonts/fa-brands-400.ttf') format('truetype');
+    src: url('../fonts/fa-brands-400.woff2') format('woff2'),
+         url('../fonts/fa-brands-400.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
