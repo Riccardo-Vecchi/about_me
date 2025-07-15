@@ -32,7 +32,7 @@ function toggleLanguage() {
     }
 }
 
-// Skill highlight logic (remains unchanged)
+// Highlight hovered skill while dimming others
 const skills = document.querySelectorAll('.skill');
 skills.forEach(skill => {
     skill.addEventListener('mouseover', () => {
