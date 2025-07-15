@@ -3,6 +3,7 @@ let currentLanguage = 'it'; // Default to 'it' as per html lang attribute
 // Function to set the default language state
 function setDefaultLanguage() {
     currentLanguage = 'it';
+    document.documentElement.lang = 'it';
     const toggleButton = document.getElementById('languageToggle');
     if (toggleButton) { // Ensure button exists
         toggleButton.textContent = 'English';
@@ -17,6 +18,7 @@ function toggleLanguage() {
     const toggleButton = document.getElementById('languageToggle');
     if (currentLanguage === 'it') {
         currentLanguage = 'en';
+        document.documentElement.lang = 'en';
         if (toggleButton) {
             toggleButton.textContent = 'Italiano';
         }
@@ -24,6 +26,7 @@ function toggleLanguage() {
         document.querySelectorAll('.lang-en').forEach(el => { el.style.display = 'block'; });
     } else {
         currentLanguage = 'it';
+        document.documentElement.lang = 'it';
         if (toggleButton) {
             toggleButton.textContent = 'English';
         }
