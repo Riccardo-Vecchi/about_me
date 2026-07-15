@@ -139,6 +139,27 @@ a:focus-visible {
     border-radius: 0.3em;
     border-left: 5px solid var(--secondary-color);
 }
+.experience-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.company-logo {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    width: 76px;
+    height: 44px;
+    padding: 0.35rem 0.5rem;
+    object-fit: contain;
+    background-color: #ffffff;
+    border: 1px solid rgba(44, 62, 80, 0.16);
+    border-radius: 0.45rem;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
+}
+:root[data-theme="dark"] .company-logo {
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);
+}
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -233,10 +254,14 @@ a:focus-visible {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: white;
-    color: #333;
+    background-color: var(--surface-color);
+    color: var(--text-color);
     text-align: center;
     padding: 0.6em 0;
+    transition: color 0.25s ease, background-color 0.25s ease;
+}
+.copyright-container a {
+    color: var(--secondary-color);
 }
 @media (max-width: 600px) {
     body {
