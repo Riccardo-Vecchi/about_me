@@ -2,7 +2,7 @@
 <html lang="it">
     <head>
         <meta charset="UTF-8">
-        <meta name="theme-color" content="#ffffff"> 
+        <meta name="theme-color" content="#ecf0f1">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta name="author" content="Riccardo Vecchi">
         <meta name="description" content="Professional portfolio of Riccardo Vecchi, a Cloud Architect working in technical presales. Explore personal and academic projects, expertise in cloud technology, and innovative IT solutions.">
@@ -16,12 +16,34 @@
         <meta property="og:type" content="profile">
         <meta property="og:url" content="https://riccardo-vecchi.github.io/about_me/">
         <title>Riccardo Vecchi</title>
+        <script>
+            (() => {
+                try {
+                    const savedTheme = localStorage.getItem('theme');
+                    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    document.documentElement.dataset.theme = savedTheme || (prefersDark ? 'dark' : 'light');
+                } catch (error) {
+                    document.documentElement.dataset.theme = 'light';
+                }
+            })();
+        </script>
         <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
         <link rel="stylesheet" type="text/css" href="assets/css/fa.all.min.css">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     </head>
     <body id="page-top">
-        <button id="languageToggle" type="button">English</button>
+        <div class="page-controls" aria-label="Preferenze pagina">
+            <button id="languageToggle" class="control-button" type="button" aria-label="Switch to English" title="Switch to English">EN</button>
+            <button id="themeToggle" class="control-button icon-button" type="button" aria-label="Attiva modalità scura" title="Attiva modalità scura">
+                <svg class="theme-icon theme-icon-moon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg class="theme-icon theme-icon-sun" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path>
+                </svg>
+            </button>
+        </div>
         <header>
             <img src="assets/images/profile_photo_2.jpg" alt="Riccardo Vecchi Profile Image" class="profile-image">
             <div class="header-content">
@@ -38,9 +60,9 @@
                     </svg> Rome, Italy</span>
                 </div>
                 <div class="social-icons">
-                    <a href="https://linkedin.com/in/vecchiriccardo/" target="_blank" title="LinkedIn Page"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/Riccardo-Vecchi" target="_blank" title="Github Page"><i class="fab fa-github"></i></a>
-                    <a href="https://x.com/RiccardoVecchi1" target="_blank" title="Twitter Page"><i class="fab fa-twitter"></i></a>
+                    <a href="https://linkedin.com/in/vecchiriccardo/" target="_blank" title="LinkedIn Page" aria-label="LinkedIn profile"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="https://github.com/Riccardo-Vecchi" target="_blank" title="Github Page" aria-label="GitHub profile"><i class="fab fa-github" aria-hidden="true"></i></a>
+                    <a href="https://x.com/RiccardoVecchi1" target="_blank" title="X profile" aria-label="X profile"><i class="fab fa-twitter" aria-hidden="true"></i></a>
                 </div>
             </div>
         </header>
@@ -99,7 +121,7 @@
                         <ul class="lang-en">
                             <li>Solution Architect within ICT Service domain for Italian Network Carriers.</li>
                             <li>Customer interface for Service Pre-Sale and E2E Solution presentation (up to CXO level).</li>
-                            <li>Responsible for PoC (Proof of Concept) development & customization of Huawei portfolio.</li>
+                            <li>Responsible for PoC (Proof of Concept) development &amp; customization of Huawei portfolio.</li>
                             <li>Owner for the Bidding Support Arrangement and Service Solution Cost Proposal.</li>
                         </ul>
                     </div>
@@ -367,15 +389,11 @@
                 </div>
             </section>
 
-            <section id="invisible_gap" class="section collapsible">
-                <div class="section-header"></div>
-            </section>
-
         </main>
 
-        <div class="copyright-container">
-            Copyright ©2025 <a href="#page-top" title="Return back to top">Riccardo Vecchi</a>
-        </div>
+        <footer class="copyright-container">
+            Copyright ©<span id="currentYear">2025</span> <a href="#page-top" title="Return back to top">Riccardo Vecchi</a>
+        </footer>
 
         <script src="assets/js/main.js" defer></script>
     </body>
