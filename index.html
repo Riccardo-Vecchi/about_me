@@ -27,7 +27,6 @@
             })();
         </script>
         <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-        <link rel="stylesheet" type="text/css" href="assets/css/fa.all.min.css">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     </head>
     <body id="page-top">
@@ -44,7 +43,7 @@
             </button>
         </div>
         <header>
-            <img src="assets/images/profile_photo_2.jpg" alt="Riccardo Vecchi Profile Image" class="profile-image">
+            <img src="assets/images/profile_photo_2-400.webp" alt="Riccardo Vecchi Profile Image" class="profile-image" width="400" height="400" fetchpriority="high" decoding="async">
             <div class="header-content">
                 <p class="lang-it">Riccardo Vecchi<br>Cloud Architect | IT Solution Architect</p>
                 <p class="lang-en">Riccardo Vecchi<br>Cloud Architect | IT Solution Architect</p>
@@ -59,9 +58,15 @@
                     </svg> Rome, Italy</span>
                 </div>
                 <div class="social-icons">
-                    <a href="https://linkedin.com/in/vecchiriccardo/" target="_blank" title="LinkedIn Page" aria-label="LinkedIn profile"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                    <a href="https://github.com/Riccardo-Vecchi" target="_blank" title="Github Page" aria-label="GitHub profile"><i class="fab fa-github" aria-hidden="true"></i></a>
-                    <a href="https://x.com/RiccardoVecchi1" target="_blank" title="X profile" aria-label="X profile"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://linkedin.com/in/vecchiriccardo/" target="_blank" title="LinkedIn Page" aria-label="LinkedIn profile">
+                        <svg class="social-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.37-1.85 3.61 0 4.27 2.37 4.27 5.46v6.29ZM5.32 7.41a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.04H3.54V8.98H7.1v11.47Z"/></svg>
+                    </a>
+                    <a href="https://github.com/Riccardo-Vecchi" target="_blank" title="Github Page" aria-label="GitHub profile">
+                        <svg class="social-icon" aria-hidden="true" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49 0-.24-.01-1.05-.01-1.9-2.78.62-3.37-1.2-3.37-1.2-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.35 1.12 2.92.85.09-.66.35-1.12.64-1.37-2.22-.26-4.55-1.14-4.55-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.36 9.36 0 0 1 12 6.96c.85 0 1.7.12 2.5.34 1.9-1.33 2.74-1.05 2.74-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.06.36.32.68.95.68 1.92 0 1.38-.01 2.5-.01 2.84 0 .27.18.59.69.49A10.24 10.24 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z" clip-rule="evenodd"/></svg>
+                    </a>
+                    <a href="https://x.com/RiccardoVecchi1" target="_blank" title="X profile" aria-label="X profile">
+                        <svg class="social-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-6.39L6.48 22H3.36l7.26-8.3L2.98 2h6.4l4.42 5.84L18.9 2Zm-1.1 17.84h1.73L8.44 4.05H6.59L17.8 19.84Z"/></svg>
+                    </a>
                 </div>
             </div>
         </header>
@@ -70,10 +75,12 @@
             <section id="about" class="section collapsible"> 
                 <div class="section-header"> 
                     <h2>
+                        <button class="section-toggle" type="button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
                         <span class="lang-it">Chi Sono</span>
                         <span class="lang-en">About Me</span>
                         <svg class="expand-svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7 10l5 5 5-5H7z"/></svg>
+                        </button>
                     </h2>
                 </div>
                 <div class="section-content">
@@ -85,15 +92,17 @@
             <section id="experience" class="section collapsible">
                 <div class="section-header">
                     <h2>
+                        <button class="section-toggle" type="button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
                         <span class="lang-it">Esperienza Lavorativa</span>
                         <span class="lang-en">Work Experience</span>
                         <svg class="expand-svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7 10l5 5 5-5H7z"/></svg>
+                        </button>
                     </h2>
                 </div>
                 <div class="section-content">
                     <div class="project">
-                        <h3 class="experience-title"><img class="company-logo" src="assets/images/tim_logo.png" alt="TIM Enterprise"> Cloud Architect / Technical Presales</h3>
+                        <h3 class="experience-title"><img class="company-logo" src="assets/images/tim_logo.png" alt="TIM Enterprise" width="76" height="44" loading="lazy" decoding="async"> Cloud Architect / Technical Presales</h3>
                         <p class="date">11/2022 - Present</p>
                         <ul class="lang-it">
                             <li><strong>Progettazione e implementazione architetture e soluzioni Cloud</strong> su piattaforme pubbliche (GCP, AWS, Azure) e private (TIM Cloud basato su VMware), assicurando l'efficienza e la scalabilità delle infrastrutture IT.</li>            
@@ -109,7 +118,7 @@
                         </ul>
                     </div>
                     <div class="project">
-                        <h3 class="experience-title"><img class="company-logo" src="assets/images/huawei_logo.png" alt="Huawei Technologies"> IT Solution Architect</h3>
+                        <h3 class="experience-title"><img class="company-logo" src="assets/images/huawei_logo.png" alt="Huawei Technologies" width="76" height="44" loading="lazy" decoding="async"> IT Solution Architect</h3>
                         <p class="date">03/2022 - 11/2022</p>
                         <ul class="lang-it">
                             <li>Solution Architect nel dominio ICT Service per operatori di rete italiani.</li>
@@ -125,7 +134,7 @@
                         </ul>
                     </div>
                     <div class="project">
-                        <h3 class="experience-title"><img class="company-logo" src="assets/images/huawei_logo.png" alt="Huawei Technologies"> Technical Director</h3>
+                        <h3 class="experience-title"><img class="company-logo" src="assets/images/huawei_logo.png" alt="Huawei Technologies" width="76" height="44" loading="lazy" decoding="async"> Technical Director</h3>
                         <p class="date">03/2021 - 11/2022</p>
                         <ul class="lang-it">
                             <li>Gestione e leadership di un piccolo team distribuito.</li>
@@ -141,7 +150,7 @@
                         </ul>
                     </div>
                     <div class="project">
-                        <h3 class="experience-title"><img class="company-logo" src="assets/images/huawei_logo.png" alt="Huawei Technologies"> Software Development Engineer</h3>
+                        <h3 class="experience-title"><img class="company-logo" src="assets/images/huawei_logo.png" alt="Huawei Technologies" width="76" height="44" loading="lazy" decoding="async"> Software Development Engineer</h3>
                         <p class="date">09/2019 - 03/2021</p>
                         <ul class="lang-it">
                             <li>Interfaccia con il cliente per lo sviluppo di nuove funzionalità su Automazione/Trasformazione Digitale/Orchestrazione della Rete.</li>
@@ -164,10 +173,12 @@
             <section id="publications" class="section collapsible">
                 <div class="section-header">
                     <h2>
+                        <button class="section-toggle" type="button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
                         <span class="lang-it">Pubblicazioni</span>
                         <span class="lang-en">Publications</span>
                         <svg class="expand-svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7 10l5 5 5-5H7z"/></svg>
+                        </button>
                     </h2>
                 </div>
                 <div class="section-content">
@@ -189,10 +200,12 @@
             <section id="projects" class="section collapsible">
                 <div class="section-header">
                     <h2>
+                        <button class="section-toggle" type="button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
                         <span class="lang-it">Progetti</span>
                         <span class="lang-en">Projects</span>
                         <svg class="expand-svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7 10l5 5 5-5H7z"/></svg>
+                        </button>
                     </h2>
                 </div>
                 <div class="section-content">
@@ -275,10 +288,12 @@
             <section id="skills" class="section collapsible">
                 <div class="section-header">
                     <h2>
+                        <button class="section-toggle" type="button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><path d="M7 13.4545L9.66667 16L17 9" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="4" width="16" height="16" rx="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         <span class="lang-it">Competenze Tecniche</span>
                         <span class="lang-en">Technical Skills</span>
                         <svg class="expand-svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7 10l5 5 5-5H7z"/></svg>
+                        </button>
                     </h2>
             </div>
                 <div class="section-content">
@@ -317,19 +332,21 @@
             <section id="certificates" class="section collapsible">
                 <div class="section-header">
                     <h2>
+                        <button class="section-toggle" type="button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
                         <span class="lang-it">Certificazioni</span>
                         <span class="lang-en">Certifications</span>
                         <svg class="expand-svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7 10l5 5 5-5H7z"/></svg>
+                        </button>
                     </h2>
                 </div>
                 <div class="section-content">
                     <div class="skills">
                         <a href="https://www.credly.com/badges/499f7fab-4e34-4a33-9294-0552a2ca6ede" target="_blank" title="Google Cloud - Professional Cloud Architect">
-                            <img id="GCP-PCA" alt="Google Cloud Professional Cloud Architect Certification Badge" src="assets/images/google-cloud-pca.webp" style="width: 130px; height: 130px;">
+                            <img id="GCP-PCA" alt="Google Cloud Professional Cloud Architect Certification Badge" src="assets/images/google-cloud-pca.webp" width="130" height="130" loading="lazy" decoding="async">
                         </a>
                         <a href="https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/6a7802f6-9b8a-456b-85ec-1fb3783ac141-riccardo-vecchi-874dca7c-6484-4c5c-ba49-80ce756fbea1-certificate.pdf" target="_blank" title="CKAD certificate">
-                            <img id="CKAD" alt="Certified Kubernetes Application Developer (CKAD) Certification Badge" src="assets/images/kubernetes-ckad-color-1024x1003.png" style="width: 130px; height: 130px;">
+                            <img id="CKAD" alt="Certified Kubernetes Application Developer (CKAD) Certification Badge" src="assets/images/kubernetes-ckad-color-1024x1003.png" width="130" height="130" loading="lazy" decoding="async">
                         </a>         
                     </div>
                 </div>
@@ -338,10 +355,12 @@
             <section id="education" class="section collapsible">
                 <div class="section-header">
                     <h2>
+                        <button class="section-toggle" type="button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
                         <span class="lang-it">Formazione</span>
                         <span class="lang-en">Education</span>
                         <svg class="expand-svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7 10l5 5 5-5H7z"/></svg>
+                        </button>
                     </h2>
                 </div>
                 <div class="section-content">
@@ -389,6 +408,13 @@
             </section>
 
         </main>
+
+        <span id="pageEndSentinel" class="page-end-sentinel" aria-hidden="true"></span>
+        <a id="backToTop" class="back-to-top" href="#page-top" aria-label="Torna all'inizio" title="Torna all'inizio">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m18 15-6-6-6 6"></path>
+            </svg>
+        </a>
 
         <footer class="copyright-container">
             Copyright ©<span id="currentYear">2025</span> <a href="#page-top" title="Return back to top">Riccardo Vecchi</a>

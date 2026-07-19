@@ -22,6 +22,7 @@ function savePreference(key, value) {
 function setLanguage(language) {
     const selectedLanguage = language === 'en' ? 'en' : 'it';
     const languageToggle = document.getElementById('languageToggle');
+    const backToTop = document.getElementById('backToTop');
     const isItalian = selectedLanguage === 'it';
 
     document.documentElement.lang = selectedLanguage;
@@ -31,6 +32,12 @@ function setLanguage(language) {
         languageToggle.textContent = isItalian ? 'EN' : 'IT';
         languageToggle.setAttribute('aria-label', label);
         languageToggle.title = label;
+    }
+
+    if (backToTop) {
+        const label = isItalian ? 'Torna all\'inizio' : 'Back to top';
+        backToTop.setAttribute('aria-label', label);
+        backToTop.title = label;
     }
 
     savePreference(STORAGE_KEYS.language, selectedLanguage);
@@ -62,10 +69,10 @@ function setTheme(theme) {
 }
 
 function toggleSection(section, expanded) {
-    const header = section.querySelector('.section-header');
+    const toggleButton = section.querySelector('.section-toggle');
     const content = section.querySelector('.section-content');
     section.classList.toggle('active', expanded);
-    header?.setAttribute('aria-expanded', String(expanded));
+    toggleButton?.setAttribute('aria-expanded', String(expanded));
     if (content) {
         content.hidden = !expanded;
     }
@@ -92,29 +99,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.querySelectorAll('.section.collapsible').forEach((section, index) => {
-        const header = section.querySelector('.section-header');
+        const toggleButton = section.querySelector('.section-toggle');
         const content = section.querySelector('.section-content');
 
-        if (!header || !content) {
+        if (!toggleButton || !content) {
             return;
         }
 
         const contentId = content.id || `section-content-${index + 1}`;
         content.id = contentId;
-        header.tabIndex = 0;
-        header.setAttribute('role', 'button');
-        header.setAttribute('aria-controls', contentId);
+        toggleButton.setAttribute('aria-controls', contentId);
         toggleSection(section, section.classList.contains('active'));
 
         const toggle = () => toggleSection(section, !section.classList.contains('active'));
-        header.addEventListener('click', toggle);
-        header.addEventListener('keydown', event => {
-            if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault();
-                toggle();
-            }
-        });
+        toggleButton.addEventListener('click', toggle);
     });
+
+    const pageEndSentinel = document.getElementById('pageEndSentinel');
+    const backToTop = document.getElementById('backToTop');
+    if (pageEndSentinel && backToTop) {
+        const endObserver = new IntersectionObserver(entries => {
+            backToTop.classList.toggle('is-visible', entries[0].isIntersecting);
+        }, { rootMargin: '0px 0px 35% 0px' });
+        endObserver.observe(pageEndSentinel);
+    }
 
     document.querySelectorAll('.skill').forEach(skill => {
         skill.addEventListener('mouseenter', () => {
