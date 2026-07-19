@@ -118,10 +118,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const pageEndSentinel = document.getElementById('pageEndSentinel');
     const backToTop = document.getElementById('backToTop');
     if (pageEndSentinel && backToTop) {
+        let isNearPageEnd = false;
+        const updateBackToTopVisibility = () => {
+            const hasScrollableContent = document.documentElement.scrollHeight > window.innerHeight + 20;
+            const hasScrolled = window.scrollY > 120;
+            backToTop.classList.toggle('is-visible', isNearPageEnd && hasScrollableContent && hasScrolled);
+        };
+
         const endObserver = new IntersectionObserver(entries => {
-            backToTop.classList.toggle('is-visible', entries[0].isIntersecting);
+            isNearPageEnd = entries[0].isIntersecting;
+            updateBackToTopVisibility();
         }, { rootMargin: '0px 0px 35% 0px' });
+
         endObserver.observe(pageEndSentinel);
+        window.addEventListener('scroll', updateBackToTopVisibility, { passive: true });
+        window.addEventListener('resize', updateBackToTopVisibility);
     }
 
     document.querySelectorAll('.skill').forEach(skill => {
