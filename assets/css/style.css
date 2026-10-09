@@ -185,6 +185,9 @@ a:focus-visible {
     flex-wrap: wrap;
     gap: 0.6em;
 }
+#certificates .skills {
+    align-items: center;
+}
 .skill {
     display: inline-block;
     background-color: var(--secondary-color);
