@@ -206,10 +206,12 @@ a:focus-visible {
     padding: 0.3em 0.6em;
     border-radius: 1.3em;
     font-size: 0.9em;
-    transition: box-shadow 0.2s ease;
+    transition: opacity 0.3s ease;
 }
-.skill:hover {
-    box-shadow: 0 0 0 2px var(--focus-color);
+@media screen and (hover: hover) and (pointer: fine) {
+    .skills:has(.skill:hover) .skill:not(:hover) {
+        opacity: 0.5;
+    }
 }
 .page-controls {
     position: fixed;
