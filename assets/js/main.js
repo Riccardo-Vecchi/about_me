@@ -78,6 +78,23 @@ function toggleSection(section, expanded) {
     }
 }
 
+function openSectionFromHash() {
+    let targetId;
+    try {
+        targetId = decodeURIComponent(window.location.hash.slice(1));
+    } catch (error) {
+        return;
+    }
+    if (!targetId) return;
+
+    const target = document.getElementById(targetId);
+    const section = target?.closest('.section.collapsible');
+    if (!section) return;
+
+    toggleSection(section, true);
+    window.requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const initialLanguage = readPreference(STORAGE_KEYS.language) || 'it';
     const initialTheme = document.documentElement.dataset.theme || 'light';
@@ -115,6 +132,20 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleButton.addEventListener('click', toggle);
     });
 
+    openSectionFromHash();
+    window.addEventListener('hashchange', openSectionFromHash);
+
+    const printImages = [];
+    window.addEventListener('beforeprint', () => {
+        document.querySelectorAll('img[loading="lazy"]').forEach(image => {
+            printImages.push(image);
+            image.loading = 'eager';
+        });
+    });
+    window.addEventListener('afterprint', () => {
+        printImages.splice(0).forEach(image => { image.loading = 'lazy'; });
+    });
+
     const pageEndSentinel = document.getElementById('pageEndSentinel');
     const backToTop = document.getElementById('backToTop');
     if (pageEndSentinel && backToTop) {
@@ -134,19 +165,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', updateBackToTopVisibility, { passive: true });
         window.addEventListener('resize', updateBackToTopVisibility);
     }
-
-    document.querySelectorAll('.skill').forEach(skill => {
-        skill.addEventListener('mouseenter', () => {
-            document.querySelectorAll('.skill').forEach(item => {
-                item.style.opacity = item === skill ? '1' : '0.5';
-            });
-        });
-        skill.addEventListener('mouseleave', () => {
-            document.querySelectorAll('.skill').forEach(item => {
-                item.style.opacity = '1';
-            });
-        });
-    });
 
     document.querySelectorAll('a[target="_blank"]').forEach(link => {
         link.rel = 'noopener noreferrer';
